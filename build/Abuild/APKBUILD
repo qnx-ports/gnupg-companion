@@ -1,7 +1,7 @@
 # Maintainer: Leo Shen <yishen@qnx.com>
 pkgname=gnupg
 pkgver=2.4.8
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="GNU Privacy Guard 2 - meta package for full GnuPG suite"
 url="https://www.gnupg.org/"
 arch="all"
@@ -62,6 +62,7 @@ package() {
     rm -rf usr/bin/gpgscm
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 34479e02fc10031965f094d1d968341588f0779e91e47dd6a1a1046404bc9eb7174ef1fb7c966e79954923713b543f2181031322201e34c5b6b753cc62a7a4e4  gnupg-gnupg-2.4.8-freepg.tar.gz
 "
